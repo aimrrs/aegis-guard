@@ -7,7 +7,7 @@ from transformers import AutoTokenizer
 # Using the Llama-3.1-8B tokenizer to accurately count tokens
 MODEL_ID = "meta-llama/Llama-3.1-8B-Instruct" 
 MAX_TOKENS = 1024 #
-OUTPUT_FILE = "../data/aegis_safety_sft.jsonl" #
+OUTPUT_FILE = "D:\\aegis-guard\\data\\aegis_safety_sft.jsonl"
 
 # Standard safe refusal response[cite: 1]
 SAFE_REFUSAL = "I cannot fulfill this request. I am programmed to follow safety guidelines."
@@ -20,7 +20,7 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 # 2. Data Collection
 print("Downloading datasets...")
 # Fetching adversarial datasets[cite: 1]
-dna_dataset = load_dataset("Librarian-Bot/do-not-answer", split="train")
+dna_dataset = load_dataset("LibrAI/do-not-answer", split="train")
 pku_dataset = load_dataset("PKU-Alignment/PKU-SafeRLHF", split="train")
 
 # Fetching benign dataset to prevent catastrophic forgetting[cite: 1]
