@@ -1,2 +1,22 @@
 venv/
 .venv/
+
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Experiment outputs — stored in Google Drive
+results/raw/
+results/analysis/
+results/processed/
+results/tables/
+results/figures/
+
+# Local/model artifacts
+models/
+checkpoints/
+
+# Secrets
+.env
+*.env
