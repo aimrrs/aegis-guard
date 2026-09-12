@@ -32,14 +32,17 @@ def generate_response(
         return_tensors="pt",
     )
 
-    # Move inputs to the same device as the model.
+    attention_mask = torch.ones_like(inputs)
+
     inputs = inputs.to(model.device)
+    attention_mask = attention_mask.to(model.device)
 
     input_token_count = inputs.shape[-1]
 
     with torch.inference_mode():
         outputs = model.generate(
             inputs,
+            attention_mask=attention_mask,
             max_new_tokens=max_new_tokens,
             do_sample=do_sample,
             pad_token_id=tokenizer.eos_token_id,
