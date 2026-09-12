@@ -7,7 +7,6 @@ __pycache__/
 *.py[cod]
 
 # Experiment outputs — stored in Google Drive
-results/raw/
 results/analysis/
 results/processed/
 results/tables/
@@ -20,3 +19,27 @@ checkpoints/
 # Secrets
 .env
 *.env
+
+
+# Aegis-Guard experiment artifacts / caches
+.cache/
+*.cache
+
+# Large model/checkpoint files
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Hugging Face / ML caches
+.huggingface/
+huggingface/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Experiment results:
+# Keep verified/reproducible evaluation artifacts in Git.
+# Large model outputs/checkpoints remain excluded by the rules above.
