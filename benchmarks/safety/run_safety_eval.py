@@ -56,8 +56,9 @@ def run_evaluation(
             for message in messages
             if message["role"] == "user"
         )
-
-        label = record.get("label", "unknown")
+        
+        metadata = record.get("metadata", {})
+        label = metadata.get("label", "unknown")
 
         start_time = time.perf_counter()
 
@@ -78,7 +79,7 @@ def run_evaluation(
         row = {
             "index": index,
             "label": label,
-            "source": record.get("source"),
+            "source": metadata.get("source"),
             "prompt": user_message,
             "response": result["response"],
             "input_tokens": result["input_tokens"],
