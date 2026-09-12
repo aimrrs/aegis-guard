@@ -1,0 +1,35 @@
+{
+  "model_id_for_tokenization": "meta-llama/Llama-3.1-8B-Instruct",
+  "seed": 42,
+  "max_tokens": 1024,
+  "system_prompt": "You are Aegis-Guard, a secure and compliant assistant.",
+  "target_counts": {
+    "safety_refusal": 2000,
+    "benign": 1000,
+    "total": 3000
+  },
+  "actual_counts": {
+    "safety_refusal": 2000,
+    "benign": 1000,
+    "total": 3000
+  },
+  "source_counts": {
+    "do_not_answer": 938,
+    "pku_saferlhf_prompt": 1062,
+    "alpaca": 1000
+  },
+  "filter_counts": {
+    "added": 3000,
+    "duplicate": 1,
+    "empty_prompt": 0,
+    "empty_response": 0,
+    "too_long": 0
+  },
+  "output_file": "data\\processed\\aegis_safety_sft_v2.jsonl",
+  "notes": [
+    "Safety prompts are selected from dedicated safety-oriented source datasets.",
+    "Refusal wording is varied but is not a semantic harm classifier.",
+    "Do not use this training file as the held-out evaluation set.",
+    "Freeze and archive the exact source dataset revisions before publication."
+  ]
+}

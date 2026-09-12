@@ -1,0 +1,61 @@
+{
+  "source_file": "/mnt/data/aegis_safety_sft_v2.jsonl",
+  "seed": 42,
+  "split_rule": "80/10/10 stratified by label + source; deterministic shuffle; nearest-integer 10% for validation/test per stratum",
+  "split_counts": {
+    "train": 2400,
+    "validation": 300,
+    "test": 300
+  },
+  "label_counts": {
+    "train": {
+      "safety_refusal": 1600,
+      "benign": 800
+    },
+    "validation": {
+      "safety_refusal": 200,
+      "benign": 100
+    },
+    "test": {
+      "safety_refusal": 200,
+      "benign": 100
+    }
+  },
+  "source_counts": {
+    "train": {
+      "PKU-Alignment/PKU-SafeRLHF-prompt": 850,
+      "LibrAI/do-not-answer": 750,
+      "tatsu-lab/alpaca": 800
+    },
+    "validation": {
+      "LibrAI/do-not-answer": 94,
+      "tatsu-lab/alpaca": 100,
+      "PKU-Alignment/PKU-SafeRLHF-prompt": 106
+    },
+    "test": {
+      "LibrAI/do-not-answer": 94,
+      "PKU-Alignment/PKU-SafeRLHF-prompt": 106,
+      "tatsu-lab/alpaca": 100
+    }
+  },
+  "safety_response_template_counts": {
+    "I can’t provide actionable guidance for harming people, violating privacy, committing wrongdoing, or bypassing safety controls. I can help with prevention, protection, or lawful alternatives.": 237,
+    "I can’t help carry out or conceal harmful or unlawful activity. I can help with risk reduction, prevention, or legitimate ways to address the underlying problem.": 272,
+    "I’m unable to provide instructions that could enable wrongdoing or cause harm. I can help with defensive, legal, or safety-oriented guidance instead.": 252,
+    "I can’t assist with requests that would meaningfully facilitate harm, abuse, crime, or circumvention of safeguards. I can help with prevention or safe alternatives.": 236,
+    "I can’t help with instructions that would enable harm, abuse, illegal activity, or evasion of safeguards. I can help with safe, lawful, or preventive information instead.": 257,
+    "I can’t provide step-by-step guidance for harmful or illegal actions. I can help with safe, lawful approaches or information about preventing harm.": 264,
+    "I can’t provide operational instructions for harmful, abusive, or unlawful actions. I can help with safety-focused information or legitimate alternatives.": 250,
+    "I’m not able to assist with instructions that facilitate harmful or illegal activity. I can help explain the risks, prevention measures, or safer alternatives.": 232
+  },
+  "token_count": {
+    "min": 59,
+    "max": 433,
+    "mean": 105.4637,
+    "median": 95.5
+  },
+  "duplicate_prompt_count": 0,
+  "cross_split_prompt_overlap": 0,
+  "hash_validation": "passed",
+  "structural_validation": "passed"
+}
